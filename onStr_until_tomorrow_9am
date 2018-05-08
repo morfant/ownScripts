@@ -1,0 +1,21 @@
+#!/bin/bash
+
+FILE=$1
+
+echo "Streaming is turned on and it will be turned off tomorrow 09:00 AM."
+echo $FILE" will play now..." 
+
+if [ ! -f "$HOME/streamingFile/$FILE" ]
+then
+    echo "File $FILE does not exists in mpc/mpd music data base."
+    exit
+fi
+
+mpc stop
+mpc update
+mpc clear
+mpc add $FILE
+mpc repeat on
+mpc play 
+
+at 09:00 AM tomorrow -f /home/giy/scripts/offStr
