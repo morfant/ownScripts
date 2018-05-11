@@ -1,0 +1,5 @@
+#!/bin/bash
+
+mpc stop
+
+echo "streaming is turned off."

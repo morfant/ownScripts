@@ -1,0 +1,10 @@
+#!/bin/bash
+#update Icecast meta data (title) as 'filename@currentPos/duration'
+
+source ps.sh
+
+addr=http://admin:$pass@weatherreport.kr:8000/admin/metadata\?mount\=/weatherreport.mp3\&mode\=updinfo\&song\=
+data=$(mpc status | awk 'NR==1{ name=$1;} NR==2{ time=$3;} END{print name"@"time;}');
+#echo "$addr""$data"
+
+curl "$addr""$data"

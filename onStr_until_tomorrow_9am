@@ -18,4 +18,4 @@ mpc add $FILE
 mpc repeat on
 mpc play 
 
-at 09:00 AM tomorrow -f /home/giy/scripts/offStr
+at 09:00 AM tomorrow -f offStr
